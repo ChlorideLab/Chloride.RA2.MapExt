@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Just track them in their own repo, not these DLLs.
+Chloride.*.dll
+
 # User-specific files
 *.rsuser
 *.suo
