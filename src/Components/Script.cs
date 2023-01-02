@@ -23,10 +23,10 @@ public class Script : ICompSection
 
     public Script(IniSection isect) : this() {
         SectionName = isect.Name;
-        Description = (string)isect["Name"];
+        Description = isect["Name"] ?? string.Empty;
         isect.Remove("Name");
         foreach (var i in isect.Items) {
-            var _ = i.Value.TrySplit();
+            var _ = i.Value?.Split(',');
             Actions[int.Parse(i.Key)] = new() {
                 Id = int.Parse(_[0]),
                 Param = int.Parse(_[1])

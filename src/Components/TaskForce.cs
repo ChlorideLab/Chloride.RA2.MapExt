@@ -20,10 +20,10 @@ public class TaskForce : ICompSection
 
     public TaskForce(IniSection isect) : this() {
         SectionName = isect.Name;
-        Description = (string)isect["Name"];
+        Description = isect["Name"] ?? string.Empty;
         isect.Remove("Name");
         foreach (var i in isect.Items) {
-            var _ = i.Value.TrySplit();
+            var _ = i.Value?.Split(',');
             Formation[int.Parse(i.Key)] = (int.Parse(_[0]), _[1]);
         }
     }

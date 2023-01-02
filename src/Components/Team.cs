@@ -15,7 +15,7 @@ public class Team : ICompSection
     }
     public Team(IniSection isect) {
         SectionName = isect.Name;
-        Description = isect.GetValue("Name") ?? "New TeamType";
+        Description = isect["Name"] ?? "New TeamType";
         isect.Remove("Name");
         foreach (var i in isect.Keys){
             var prop = this.GetType().GetProperty(i);
