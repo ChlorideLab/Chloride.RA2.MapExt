@@ -1,7 +1,7 @@
 namespace Chloride.RA2.MapExt.Components;
 
-public interface ICompSection
+public interface IComponent
 {
-    public string SectionName { get; }
+    public string RegName { get; }
 	public string Description { get; set; }
 }

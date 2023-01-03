@@ -2,24 +2,24 @@ using Chloride.RA2.IniExt;
 
 namespace Chloride.RA2.MapExt.Components;
 
-public class TaskForce : ICompSection
+public class TaskForce : IComponent
 {
-    public string SectionName { get; private set; }
+    public string RegName { get; private set; }
     public string Description { get; set; }
     internal (int count, string item)[] Formation;
 
     public TaskForce() {
-        SectionName = string.Empty;
+        RegName = string.Empty;
         Description = "New TaskForce";
         Formation = new (int, string)[6];
     }
 
     public TaskForce(string name) : this() {
-        SectionName = name;
+        RegName = name;
     }
 
     public TaskForce(IniSection isect) : this() {
-        SectionName = isect.Name;
+        RegName = isect.Name;
         Description = isect["Name"] ?? string.Empty;
         isect.Remove("Name");
         foreach (var i in isect.Items) {
@@ -29,5 +29,5 @@ public class TaskForce : ICompSection
     }
 
     public (int count, string item) this[int idx] { get => Formation[idx]; }
-    public override string ToString() => $"TaskForce {SectionName}";
+    public override string ToString() => $"TaskForce {RegName}";
 }

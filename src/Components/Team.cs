@@ -2,19 +2,19 @@ using Chloride.RA2.IniExt;
 
 namespace Chloride.RA2.MapExt.Components;
 
-public class Team : ICompSection
+public class Team : IComponent
 {
-    public string SectionName { get; private set; }
+    public string RegName { get; private set; }
     public string Description { get; set; }
     public Team() {
-        SectionName = string.Empty;
+        RegName = string.Empty;
         Description = "New TeamType";
     }
     public Team(string name) : this() {
-        SectionName = name;
+        RegName = name;
     }
     public Team(IniSection isect) {
-        SectionName = isect.Name;
+        RegName = isect.Name;
         Description = isect["Name"] ?? "New TeamType";
         isect.Remove("Name");
         foreach (var i in isect.Keys){
@@ -56,5 +56,5 @@ public class Team : ICompSection
     public bool OnlyTargetHouseEnemy = false;
     public bool TransportsReturnOnUnload = false;
 
-    public override string ToString() => $"Team {SectionName}";
+    public override string ToString() => $"Team {RegName}";
 }
