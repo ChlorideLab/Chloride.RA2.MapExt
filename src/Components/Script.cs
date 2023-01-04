@@ -23,10 +23,10 @@ public class Script : IComponent
 
     public Script(IniSection isect) : this() {
         RegName = isect.Name;
-        Description = isect["Name"] ?? string.Empty;
+        Description = isect["Name"].ToString();
         isect.Remove("Name");
         foreach (var i in isect.Items) {
-            var _ = i.Value?.Split(',');
+            var _ = i.Value.Split();
             Actions[int.Parse(i.Key)] = new() {
                 Id = int.Parse(_[0]),
                 Param = int.Parse(_[1])

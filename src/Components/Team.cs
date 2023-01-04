@@ -15,7 +15,7 @@ public class Team : IComponent
     }
     public Team(IniSection isect) {
         RegName = isect.Name;
-        Description = isect["Name"] ?? "New TeamType";
+        Description = isect["Name"].ToString();
         isect.Remove("Name");
         foreach (var i in isect.Keys){
             var prop = this.GetType().GetProperty(i);
