@@ -1,7 +1,8 @@
 using Chloride.RA2.IniExt;
 using Chloride.RA2.MapExt.Utils;
+using Chloride.RA2.MapExt.Interfaces;
 
-namespace Chloride.RA2.MapExt.Components;
+namespace Chloride.RA2.MapExt.Data;
 
 public enum AITriggerCond {
     Any = -1,

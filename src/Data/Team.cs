@@ -1,6 +1,7 @@
 using Chloride.RA2.IniExt;
+using Chloride.RA2.MapExt.Interfaces;
 
-namespace Chloride.RA2.MapExt.Components;
+namespace Chloride.RA2.MapExt.Data;
 
 public class Team : IComponent
 {

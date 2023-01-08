@@ -1,4 +1,4 @@
-namespace Chloride.RA2.MapExt.Components
+namespace Chloride.RA2.MapExt.Data
 {
     public struct ScriptAction
     {

@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-using System.Collections;
+using Chloride.RA2.MapExt.Interfaces;
 using Chloride.RA2.IniExt;
 
-namespace Chloride.RA2.MapExt.Components;
+namespace Chloride.RA2.MapExt.Data;
 
 public class Script : IComponent
 {
