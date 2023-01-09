@@ -38,4 +38,6 @@ public class Country : IComponent
     public double BuildTimeInfantryMult = 1;
     public double BuildTimeBuildingsMult = 1;
     public double BuildTimeDefensesMult = 1;
+
+    public override string ToString() => RegName;
 }

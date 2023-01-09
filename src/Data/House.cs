@@ -38,4 +38,5 @@ public class House
             }
         }
     }
+    public override string ToString() => RegName;
 }
